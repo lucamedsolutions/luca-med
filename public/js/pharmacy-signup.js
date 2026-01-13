@@ -1,4 +1,7 @@
-document.getElementById("pharmacyForm").addEventListener("submit", async (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("pharmacyForm")
+    .addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const form = e.target;
@@ -29,3 +32,5 @@ document.getElementById("pharmacyForm").addEventListener("submit", async (e) => 
     alert(data.error || "Something went wrong");
   }
 });
+});
+
