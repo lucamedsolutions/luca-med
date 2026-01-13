@@ -6,7 +6,7 @@ const supabase = createClient(
   process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY
 );
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
