@@ -6,7 +6,7 @@ const supabase = createClient(
   process.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY
 );
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -39,33 +39,33 @@ export default async function handler(req, res) {
   }
 
   // Send introductory pricing email
-//   try {
-//     await resend.emails.send({
-//       from: `Luca Med Solutions <${process.env.FROM_EMAIL}>`,
-//       to: email,
-//       subject: "Introductory Delivery Pricing – Luca Med Solutions",
-//       html: `
-//         <p>Thank you for contacting <strong>Luca Med Solutions</strong>.</p>
+  try {
+    await resend.emails.send({
+      from: `Luca Med Solutions <${process.env.FROM_EMAIL}>`,
+      to: email,
+      subject: "Introductory Delivery Pricing – Luca Med Solutions",
+      html: `
+        <p>Thank you for contacting <strong>Luca Med Solutions</strong>.</p>
 
-//         <p>We are currently offering <strong>introductory delivery rates</strong> for pharmacies:</p>
+        <p>We are currently offering <strong>introductory delivery rates</strong> for pharmacies:</p>
 
-//         <ul>
-//           <li><strong>$4.50</strong> for deliveries up to 15 km</li>
-//           <li><strong>$6.75</strong> for deliveries over 15 km</li>
-//         </ul>
+        <ul>
+          <li><strong>$4.50</strong> for deliveries in same city</li>
+          <li><strong>$6.75</strong> for deliveries to anywhere in GTA</li>
+        </ul>
 
-//         <p>Our deliveries are PHIPA-compliant, secure, and handled by trained drivers.</p>
+        <p>Our deliveries are PHIPA-compliant, secure, and handled by trained drivers.</p>
 
-//         <p>Reply to this email if you’d like to get started or have questions.</p>
+        <p>Reply to this email if you’d like to get started or have questions.</p>
 
-//         <br />
-//         <p>— Luca Med Solutions</p>
-//       `
-//     });
-//   } catch (emailError) {
-//     // Email failure should not block submission
-//     console.error("Email failed:", emailError);
-//   }
+        <br />
+        <p>— Luca Med Solutions</p>
+      `
+    });
+  } catch (emailError) {
+    // Email failure should not block submission
+    console.error("Email failed:", emailError);
+  }
 
   return res.status(200).json({ success: true });
 }
