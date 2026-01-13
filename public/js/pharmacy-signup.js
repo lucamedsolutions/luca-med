@@ -27,10 +27,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (res.ok) {
     form.reset();
-    alert("Thank you! We’ll contact you shortly.");
+    // Success UI
+      showMessage(
+        "Thank you for signing up! Our team will contact you shortly.",
+        "success"
+      );
   } else {
-    alert(data.error || "Something went wrong");
+    showMessage(
+        "Something went wrong. Please try again or contact us directly.",
+        "error"
+      );
   }
 });
+  function showMessage(text, type) {
+    messageBox.textContent = text;
+    messageBox.className = type; // success | error
+  }
 });
 
