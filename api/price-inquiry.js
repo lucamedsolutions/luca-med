@@ -36,8 +36,8 @@ export default async function handler(req, res) {
   // Send introductory pricing email
   try {
     await resend.emails.send({
-      from: `Luca Med Solutions <${process.env.FROM_EMAIL}>`,
-      to: email,
+      from: `${process.env.FROM_EMAIL}`,
+      to: [email],
       subject: "Introductory Delivery Pricing – Luca Med Solutions",
       html: `
         <p>Thank you for contacting <strong>Luca Med Solutions</strong>.</p>
