@@ -20,11 +20,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: "Invalid email" });
-  }
-
   // Save inquiry
   const { error } = await supabase
     .from("price_inquiries")
@@ -37,7 +32,7 @@ export default async function handler(req, res) {
   if (error) {
     return res.status(500).json({ error: "Database error" });
   }
-
+    console.log("Sending email to:", email);
   // Send introductory pricing email
   try {
     await resend.emails.send({
@@ -62,6 +57,7 @@ export default async function handler(req, res) {
         <p>— Luca Med Solutions</p>
       `
     });
+    console.log("email sent to:", email);
   } catch (emailError) {
     // Email failure should not block submission
     console.error("Email failed:", emailError);
