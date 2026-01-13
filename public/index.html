@@ -115,6 +115,7 @@
                       type="text"
                       class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                       placeholder="Enter pickup address"
+                      required
                     />
                   </div>
                 </div>
@@ -132,6 +133,7 @@
                       type="text"
                       class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                       placeholder="Enter delivery address"
+                      required
                     />
                   </div>
                 </div>
@@ -149,6 +151,8 @@
                       type="email"
                       class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
                       placeholder="Enter your email"
+                      pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                      required
                     />
                   </div>
                 </div>
@@ -160,12 +164,12 @@
                   >
                     Get Price
                   </button>
-                  <button
+                  <!-- <button
                     type="button"
                     class="flex-1 border border-black text-black py-3 px-6 !rounded-button hover:bg-black hover:text-white transition-colors font-medium whitespace-nowrap"
                   >
                     Partner With Us
-                  </button>
+                  </button> -->
                 </div>
               </form>
             </div>
