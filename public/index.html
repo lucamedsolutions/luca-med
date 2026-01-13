@@ -623,6 +623,8 @@
                   type="text"
                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                   placeholder="Enter pharmacy name"
+                  required
+                  name="pharmacy_name"
                 />
               </div>
               <div>
@@ -633,6 +635,8 @@
                   type="text"
                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                   placeholder="Enter contact person name"
+                  name="contact_name"
+                  required
                 />
               </div>
             </div>
@@ -645,6 +649,8 @@
                   type="email"
                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                   placeholder="Enter email address"
+                  name="email"
+                  required
                 />
               </div>
               <div>
@@ -655,6 +661,7 @@
                   type="tel"
                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                   placeholder="Enter phone number"
+                  name="phone"
                 />
               </div>
             </div>
@@ -666,6 +673,7 @@
                 type="text"
                 class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                 placeholder="Enter complete pharmacy address"
+                name="address"
               />
             </div>
             <div>
@@ -679,6 +687,8 @@
                       type="checkbox"
                       class="sr-only peer"
                       id="medical-delivery"
+                      name="services[]"
+                      value="medical-delivery"
                     />
                     <div
                       class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
@@ -698,7 +708,9 @@
                     <input
                       type="checkbox"
                       class="sr-only peer"
-                      id="recurring-deliveries"
+                      id="website-development"
+                      name="services[]"
+                      value="website-development"
                     />
                     <div
                       class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
@@ -711,27 +723,7 @@
                       ></i>
                     </div>
                   </div>
-                  <span class="text-sm text-white">Recurring Deliveries</span>
-                </label>
-                <label class="flex items-center space-x-3 cursor-pointer">
-                  <div class="relative">
-                    <input
-                      type="checkbox"
-                      class="sr-only peer"
-                      id="website-creation"
-                    />
-                    <div
-                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
-                    ></div>
-                    <div
-                      class="absolute inset-0 flex items-center justify-center"
-                    >
-                      <i
-                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
-                      ></i>
-                    </div>
-                  </div>
-                  <span class="text-sm text-white">Website Creation</span>
+                  <span class="text-sm text-white">Website Development</span>
                 </label>
                 <label class="flex items-center space-x-3 cursor-pointer">
                   <div class="relative">
@@ -739,6 +731,8 @@
                       type="checkbox"
                       class="sr-only peer"
                       id="seo-marketing"
+                      name="services[]"
+                      value="seo-marketing"
                     />
                     <div
                       class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
@@ -753,26 +747,6 @@
                   </div>
                   <span class="text-sm text-white">SEO & Marketing</span>
                 </label>
-                <label class="flex items-center space-x-3 cursor-pointer">
-                  <div class="relative">
-                    <input
-                      type="checkbox"
-                      class="sr-only peer"
-                      id="website-upgrade"
-                    />
-                    <div
-                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
-                    ></div>
-                    <div
-                      class="absolute inset-0 flex items-center justify-center"
-                    >
-                      <i
-                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
-                      ></i>
-                    </div>
-                  </div>
-                  <span class="text-sm text-white">Website Upgrade</span>
-                </label>
               </div>
             </div>
             <div>
@@ -783,6 +757,7 @@
                 rows="4"
                 class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                 placeholder="Tell us about your specific needs or ask any questions"
+                name="message"
               ></textarea>
             </div>
             <div class="text-center pt-4">
@@ -790,7 +765,7 @@
                 type="submit"
                 class="bg-black text-white px-8 py-3 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
               >
-                Submit & Get Started
+                Get Started
               </button>
             </div>
           </form>

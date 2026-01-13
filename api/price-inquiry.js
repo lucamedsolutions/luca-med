@@ -32,7 +32,6 @@ export default async function handler(req, res) {
   if (error) {
     return res.status(500).json({ error: "Database error" });
   }
-    console.log("Sending email to:", email);
   // Send introductory pricing email
   try {
     await resend.emails.send({
@@ -57,7 +56,6 @@ export default async function handler(req, res) {
         <p>— Luca Med Solutions</p>
       `
     });
-    console.log("email sent to:", email);
   } catch (emailError) {
     // Email failure should not block submission
     console.error("Email failed:", emailError);
