@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Luca Med Solutions - Affordable & Reliable Medicine Delivery for
+      Pharmacies
+    </title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              secondary: "#4B5563",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+      content: "\f3c2";
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <span class="text-2xl font-bold text-black">Luca Med</span>
+          </div>
+          <div class="flex items-center space-x-8">
+            <nav class="hidden md:flex space-x-8">
+              <a
+                href="#services"
+                class="text-gray-700 hover:text-black transition-colors"
+                >Services</a
+              >
+              <a
+                href="#how-it-works"
+                class="text-gray-700 hover:text-black transition-colors"
+                >How It Works</a
+              >
+              <a
+                href="#partners"
+                class="text-gray-700 hover:text-black transition-colors"
+                >Partners</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-700 hover:text-black transition-colors"
+                >Contact</a
+              >
+            </nav>
+            <button
+              class="bg-black text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+          <!-- Left Column - Form -->
+          <div class="flex">
+            <div
+              class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200 flex-1 flex flex-col"
+            >
+              <h3 class="text-2xl font-semibold text-black mb-6 text-center">
+                Deliver anywhere in GTA
+              </h3>
+              <form class="space-y-4 flex-1 flex flex-col">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >From Address (Pickup location)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center justify-center pointer-events-none w-5 h-full"
+                    >
+                      <i class="ri-map-pin-line text-gray-400 text-lg"></i>
+                    </div>
+                    <input
+                      type="text"
+                      class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
+                      placeholder="Enter pickup address"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >To Address (Delivery location)</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center justify-center pointer-events-none w-5 h-full"
+                    >
+                      <i class="ri-map-pin-2-line text-gray-400 text-lg"></i>
+                    </div>
+                    <input
+                      type="text"
+                      class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
+                      placeholder="Enter delivery address"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Email Address</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center justify-center pointer-events-none w-5 h-full"
+                    >
+                      <i class="ri-mail-line text-gray-400 text-lg"></i>
+                    </div>
+                    <input
+                      type="email"
+                      class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-sm"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+                <div class="flex-1"></div>
+                <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                  <button
+                    type="submit"
+                    class="flex-1 bg-black text-white py-3 px-6 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
+                  >
+                    Get Price
+                  </button>
+                  <button
+                    type="button"
+                    class="flex-1 border border-black text-black py-3 px-6 !rounded-button hover:bg-black hover:text-white transition-colors font-medium whitespace-nowrap"
+                  >
+                    Partner With Us
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Right Column - Features Widget -->
+          <div class="flex">
+            <div
+              class="bg-black p-8 rounded-2xl text-white shadow-xl flex-1 flex flex-col"
+            >
+              <h3 class="text-2xl font-bold mb-6 text-center">
+                Why Pharmacies Choose Us
+              </h3>
+              <div class="space-y-4 flex-1">
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">No Contracts</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">$0 Onboarding Fee</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">$0 Monthly Fee</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">No Minimum Orders</span>
+                </div>
+				<div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">No Hidden Charges</span>
+                </div>
+              </div>
+              <div class="mt-8 p-4 bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-300 text-center italic">
+                  "Pay only for what you use. Simple, transparent pricing that
+                  scales with your pharmacy."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Who Is Luca Med -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h2 class="text-4xl font-bold text-black">Who Is Luca Med</h2>
+            <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
+              <p>
+                Luca Med Solutions helps pharmacies deliver medical orders
+                safely and on time. We combine a vetted driver network, flexible
+                pickup windows, and cold-chain management to protect product
+                integrity and patient outcomes.
+              </p>
+              <p>
+                From one-off deliveries to recurring schedules, we streamline
+                logistics so your team can focus on care—not couriers.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-6">
+            <div
+              class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200 flex items-center space-x-4"
+            >
+              <div
+                class="w-12 h-12 bg-black rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-shield-check-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">PHIPA Compliant</h3>
+                <p class="text-sm text-gray-600">
+                  Full privacy protection compliance
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200 flex items-center space-x-4"
+            >
+              <div
+                class="w-12 h-12 bg-black rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-truck-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">TDG Trained</h3>
+                <p class="text-sm text-gray-600">
+                  Transportation of dangerous goods certified
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-200 flex items-center space-x-4"
+            >
+              <div
+                class="w-12 h-12 bg-black rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-first-aid-kit-line text-white text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">WHMIS Certified</h3>
+                <p class="text-sm text-gray-600">
+                  Workplace hazardous materials certified
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Luca Med -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-black mb-4">
+            Why Choose Luca Med
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We provide comprehensive medical delivery solutions tailored
+            specifically for pharmacy needs
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-money-dollar-circle-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Affordable & Transparent Pricing
+            </h3>
+            <p class="text-gray-600">
+              Clear, upfront pricing with no hidden fees. Cost-effective
+              solutions for all delivery needs.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-user-heart-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Healthcare-Trained Drivers
+            </h3>
+            <p class="text-gray-600">
+              Vetted professionals trained in medical delivery protocols and
+              patient confidentiality.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-shield-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Secure Medication Handling
+            </h3>
+            <p class="text-gray-600">
+              Proper handling and storage of medications with full chain of
+              custody documentation.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-temp-cold-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Cold-Chain & Temperature Control
+            </h3>
+            <p class="text-gray-600">
+              Specialized equipment for temperature-sensitive medications and
+              vaccines.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-calendar-schedule-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Flexible Delivery Options
+            </h3>
+            <p class="text-gray-600">
+              Same-day, scheduled, and recurring deliveries to meet your
+              pharmacy's unique needs.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200"
+          >
+            <div
+              class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-customer-service-2-line text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              Pharmacy-First Support
+            </h3>
+            <p class="text-gray-600">
+              Dedicated support team that understands pharmacy operations and
+              patient care priorities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Partner Pharmacies -->
+    <section id="partners" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-black mb-4">
+            Trusted by Local Pharmacies
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Join our network of pharmacy partners who trust us with their most
+            important deliveries
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div
+            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
+          >
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+              >
+                <i class="ri-hospital-line text-primary text-xl"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-700"
+                >HealthCare Plus</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
+          >
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+              >
+                <i class="ri-medicine-bottle-line text-secondary text-xl"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-700"
+                >Metro Pharmacy</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
+          >
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+              >
+                <i class="ri-capsule-line text-primary text-xl"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-700"
+                >Community Care</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
+          >
+            <div class="text-center">
+              <div
+                class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+              >
+                <i class="ri-first-aid-kit-line text-secondary text-xl"></i>
+              </div>
+              <span class="text-sm font-medium text-gray-700">Wellness Rx</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            class="bg-black text-white px-8 py-3 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
+          >
+            Become a Partner Pharmacy
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Technology & Growth Services -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Technology & Marketing Support for Pharmacies
+          </h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
+            In addition to delivery, Luca Med Solutions helps pharmacy partners
+            grow with reliable digital solutions.
+          </p>
+          <p class="text-sm text-gray-500 italic">
+            Note: Delivery remains our primary service
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-global-line text-black text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Pharmacy Website Creation
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Professional website design and development for pharmacy
+              businesses.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-rocket-line text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Website Upgrades & Performance
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Enhance existing websites with improved functionality and speed.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-search-line text-black text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              SEO Optimization
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Improve local pharmacy visibility in search results.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-megaphone-line text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Digital Marketing & Lead Generation
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Attract new customers through targeted digital marketing
+              campaigns.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-calendar-check-line text-black text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Online Appointment Integration
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Streamline patient scheduling with online booking systems.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
+            >
+              <i class="ri-phone-line text-gray-700 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Contact & Communication Tools
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Improve patient communication with integrated contact solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us / Sign-Up Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Get Started with Luca Med Solutions
+          </h2>
+          <p class="text-xl text-gray-600">
+            Join our network of pharmacy partners and start delivering better
+            care today
+          </p>
+        </div>
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-white mb-2"
+                  >Pharmacy Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                  placeholder="Enter pharmacy name"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-white mb-2"
+                  >Contact Person</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                  placeholder="Enter contact person name"
+                />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-white mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                  placeholder="Enter email address"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-white mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                  placeholder="Enter phone number"
+                />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-white mb-2"
+                >Pharmacy Address</label
+              >
+              <input
+                type="text"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                placeholder="Enter complete pharmacy address"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-white mb-4"
+                >Services Interested In</label
+              >
+              <div class="grid md:grid-cols-2 gap-4">
+                <label class="flex items-center space-x-3 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only peer"
+                      id="medical-delivery"
+                    />
+                    <div
+                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
+                      ></i>
+                    </div>
+                  </div>
+                  <span class="text-sm text-white">Medical Delivery</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only peer"
+                      id="recurring-deliveries"
+                    />
+                    <div
+                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
+                      ></i>
+                    </div>
+                  </div>
+                  <span class="text-sm text-white">Recurring Deliveries</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only peer"
+                      id="website-creation"
+                    />
+                    <div
+                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
+                      ></i>
+                    </div>
+                  </div>
+                  <span class="text-sm text-white">Website Creation</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only peer"
+                      id="seo-marketing"
+                    />
+                    <div
+                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
+                      ></i>
+                    </div>
+                  </div>
+                  <span class="text-sm text-white">SEO & Marketing</span>
+                </label>
+                <label class="flex items-center space-x-3 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only peer"
+                      id="website-upgrade"
+                    />
+                    <div
+                      class="w-5 h-5 border-2 border-gray-500 rounded peer-checked:bg-primary peer-checked:border-primary transition-colors"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-check-line text-white text-xs opacity-0 peer-checked:opacity-100 transition-opacity"
+                      ></i>
+                    </div>
+                  </div>
+                  <span class="text-sm text-white">Website Upgrade</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-white mb-2"
+                >Message / Notes</label
+              >
+              <textarea
+                rows="4"
+                class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
+                placeholder="Tell us about your specific needs or ask any questions"
+              ></textarea>
+            </div>
+            <div class="text-center pt-4">
+              <button
+                type="submit"
+                class="bg-black text-white px-8 py-3 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
+              >
+                Submit & Get Started
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="col-span-2">
+            <div class="flex items-center mb-4">
+              <span class="text-2xl font-['Pacifico'] text-primary"
+                >Luca Med Solutions</span
+              >
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">
+              Reliable, compliant medical delivery services for pharmacies
+              across Canada. Focus on patient care while we handle the
+              logistics.
+            </p>
+            <div class="space-y-2 text-sm text-gray-400">
+              <p>Email: info@lucamedsolutions.ca</p>
+              <p>Phone: 1-800-LUCA-MED</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Services</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Medical Delivery</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Cold-Chain Transport</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Recurring Schedules</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Same-Day Delivery</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Compliance</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-400">
+              © 2026 Luca Med Solutions. All rights reserved. PHIPA Compliant &
+              Certified.
+            </p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-linkedin-fill"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-twitter-fill"></i>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition-colors"
+              >
+                <div class="w-6 h-6 flex items-center justify-center">
+                  <i class="ri-facebook-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="checkbox-functionality">
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+          const checkIcon = checkbox.parentElement.querySelector(".ri-check-line");
+          const checkDiv = checkbox.parentElement.querySelector("div");
+          checkbox.addEventListener("change", function () {
+            if (this.checked) {
+              checkDiv.classList.add("bg-primary", "border-primary");
+              checkDiv.classList.remove("border-gray-300", "border-gray-500");
+              if (checkIcon) {
+                checkIcon.classList.remove("opacity-0");
+                checkIcon.classList.add("opacity-100");
+              }
+            } else {
+              checkDiv.classList.remove("bg-primary", "border-primary");
+              checkDiv.classList.add("border-gray-500");
+              if (checkIcon) {
+                checkIcon.classList.add("opacity-0");
+                checkIcon.classList.remove("opacity-100");
+              }
+            }
+          });
+        });
+      });
+    </script>
+    <script id="smooth-scroll">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
