@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const messageBox = document.getElementById("signupMessage");
   document
     .getElementById("pharmacyForm")
     .addEventListener("submit", async (e) => {
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ).map(cb => cb.value)
   };
 
+  try{
   const res = await fetch("/api/pharmacy-signup", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -25,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const data = await res.json();
 
+  if (!res.ok) {
+        throw new Error(data.error || "Request failed");
+      }
+
   if (res.ok) {
     form.reset();
     // Success UI
@@ -32,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Thank you for signing up! Our team will contact you shortly.",
         "success"
       );
-  } else {
+  }
+ } catch(err) {
     showMessage(
         "Something went wrong. Please try again or contact us directly.",
         "error"
@@ -40,8 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
   function showMessage(text, type) {
-    messageBox.textContent = text;
-    messageBox.className = type; // success | error
-  }
+        if (type === "error") {
+            messageBox.className = "text-red-600 mt-3";
+        } else {
+            messageBox.className = "text-green-600 mt-3";
+        }
+        messageBox.textContent = text;
+    }
 });
 

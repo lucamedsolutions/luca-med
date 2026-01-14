@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("priceForm");
-  const button = form.querySelector("button");
+  const button = document.getElementById("btnSubmit");
   const messageBox = document.getElementById("priceMessage");
 
 
@@ -29,13 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(data.error || "Request failed");
       }
 
-      // Success UI
-      showMessage(
-        "Pricing details have been sent to your email. Our introductory rates are $4.50 (≤15 km) and $6.75 (>15 km).",
-        "success"
-      );
+        // Success UI
+        priceModal.classList.remove("hidden");
+        priceModal.classList.add("flex");
+        form.reset();
 
-      form.reset();
     } catch (err) {
       showMessage(
         "Something went wrong. Please try again or contact us directly.",
@@ -43,12 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     } finally {
       button.disabled = false;
-      button.textContent = "Get Delivery Price";
+      button.textContent = "Get Price";
     }
   });
 
-  function showMessage(text, type) {
-    messageBox.textContent = text;
-    messageBox.className = type; // success | error
-  }
+    function showMessage(text, type) {
+        if (type === "error") {
+            messageBox.textContent = text;
+            messageBox.className = "text-red-600 mt-3";
+        } else {
+            messageBox.className = "hidden";
+        }
+    }
+
+    closePriceModal.addEventListener("click", () => {
+        priceModal.classList.add("hidden");
+    });
+    goToSignup.addEventListener("click", () => {
+        priceModal.classList.add("hidden");
+        document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+    });
+    
 });

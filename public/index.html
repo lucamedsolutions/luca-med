@@ -52,11 +52,28 @@
       :where([class^="ri-"])::before {
       content: "\f3c2";
       }
+      /* Sleek horizontal scrollbar (Partners section only) */
+      #partners ::-webkit-scrollbar {
+        height: 3px;
+      }
+
+      #partners ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      #partners ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 999px;
+      }
+
+      #partners ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.4);
+      }
     </style>
   </head>
   <body class="bg-white text-gray-900 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow-sm border-b border-gray-200">
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
@@ -66,37 +83,46 @@
           <div class="flex items-center space-x-8">
             <nav class="hidden md:flex space-x-8">
               <a
-                href="#services"
-                class="text-gray-700 hover:text-black transition-colors"
-                >Services</a
+                href="#why-us"
+                class="text-black text-bold hover:text-gray-600 transition-colors"
+                >Why Us</a
               >
               <a
-                href="#how-it-works"
-                class="text-gray-700 hover:text-black transition-colors"
-                >How It Works</a
+                href="#other-services"
+                class="text-black text-bold hover:text-gray-600 transition-colors"
+                >Other Services</a
               >
               <a
                 href="#partners"
-                class="text-gray-700 hover:text-black transition-colors"
+                class="text-black text-bold hover:text-gray-600 transition-colors"
                 >Partners</a
               >
               <a
-                href="#contact"
-                class="text-gray-700 hover:text-black transition-colors"
-                >Contact</a
+                href="https://lucamed.tookan.in/" target="_blank"
+                class="text-black text-bold hover:text-gray-600 transition-colors"
+                >Pharmacy Sign in</a
               >
             </nav>
             <button
               class="bg-black text-white px-6 py-2 !rounded-button hover:bg-gray-800 transition-colors whitespace-nowrap"
             >
-              Get Started
+              <a
+                href="#contact">Get Started</a>
             </button>
           </div>
         </div>
       </div>
     </header>
+    <!-- Service Headline -->
+    <section class="bg-black text-white py-3">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-sm sm:text-base font-bold">
+      Reliable Prescription & Medicine Delivery Services for Pharmacies
+    </p>
+  </div>
+</section>
     <!-- Hero Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-10 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-stretch">
           <!-- Left Column - Form -->
@@ -241,6 +267,7 @@
                 <div class="flex-1"></div>
                 <div class="flex flex-col sm:flex-row gap-3 pt-4">
                   <button
+                    id="btnSubmit"
                     type="submit"
                     class="flex-1 bg-black text-white py-3 px-6 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
                   >
@@ -250,7 +277,7 @@
               </form>
               <div
                 id="priceMessage"
-                class="text-sm mt-3"
+                class="text-sm mt-3 hidden"
               ></div>
             </div>
           </div>
@@ -295,7 +322,7 @@
                   </div>
                   <span class="text-lg font-medium">No Minimum Orders</span>
                 </div>
-				<div class="flex items-center space-x-4">
+				        <div class="flex items-center space-x-4">
                   <div
                     class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
                   >
@@ -303,11 +330,18 @@
                   </div>
                   <span class="text-lg font-medium">No Hidden Charges</span>
                 </div>
+                 <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                  >
+                    <i class="ri-check-line text-black text-lg"></i>
+                  </div>
+                  <span class="text-lg font-medium">Pickups until 5 PM</span>
+                </div>
               </div>
               <div class="mt-8 p-4 bg-gray-800 rounded-lg">
-                <p class="text-sm text-gray-300 text-center italic">
-                  "Pay only for what you use. Simple, transparent pricing that
-                  scales with your pharmacy."
+                <p class="text-md text-gray-300 text-center text-bold">
+                  Transparent pricing designed for operational simplicity.
                 </p>
               </div>
             </div>
@@ -316,12 +350,12 @@
       </div>
     </section>
     <!-- Who Is Luca Med -->
-    <section class="py-20 bg-white">
+    <section id="about" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div class="space-y-6">
             <h2 class="text-4xl font-bold text-black">Who Is Luca Med</h2>
-            <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
+            <div class="space-y-4 text-lg text-black-600 leading-relaxed">
               <p>
                 Luca Med Solutions helps pharmacies deliver medical orders
                 safely and on time. We combine a vetted driver network, flexible
@@ -385,7 +419,7 @@
       </div>
     </section>
     <!-- Why Choose Luca Med -->
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="why-us" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-black mb-4">
@@ -496,179 +530,99 @@
         </div>
       </div>
     </section>
-    <!-- Partner Pharmacies -->
-    <section id="partners" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-black mb-4">
-            Trusted by Local Pharmacies
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Join our network of pharmacy partners who trust us with their most
-            important deliveries
-          </p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          <div
-            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
-              >
-                <i class="ri-hospital-line text-primary text-xl"></i>
-              </div>
-              <span class="text-sm font-medium text-gray-700"
-                >HealthCare Plus</span
-              >
-            </div>
-          </div>
-          <div
-            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
-              >
-                <i class="ri-medicine-bottle-line text-secondary text-xl"></i>
-              </div>
-              <span class="text-sm font-medium text-gray-700"
-                >Metro Pharmacy</span
-              >
-            </div>
-          </div>
-          <div
-            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
-              >
-                <i class="ri-capsule-line text-primary text-xl"></i>
-              </div>
-              <span class="text-sm font-medium text-gray-700"
-                >Community Care</span
-              >
-            </div>
-          </div>
-          <div
-            class="bg-gray-50 p-6 rounded-xl flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div
-                class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
-              >
-                <i class="ri-first-aid-kit-line text-secondary text-xl"></i>
-              </div>
-              <span class="text-sm font-medium text-gray-700">Wellness Rx</span>
-            </div>
-          </div>
-        </div>
-        <div class="text-center">
+<!-- Partner Pharmacies -->
+<section id="partners" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-black mb-4">
+        Trusted by Local Pharmacies
+      </h2>
+    </div>
+
+    <div class="flex gap-8 overflow-x-scroll pb-6">
+      <div class="min-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+        <img src="images/pharmasave.png" alt="Pharmacy Logo" class="h-20 object-contain" />
+      </div>
+
+      <div class="min-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+        <img src="images/guardian.jpg" alt="Pharmacy Logo" class="h-20 object-contain" />
+      </div>
+
+      <div class="min-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+        <img src="images/life-care.png" alt="Pharmacy Logo" class="h-20 object-contain" />
+      </div>
+
+      <div class="min-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+        <img src="images/select-health.png" alt="Pharmacy Logo" class="h-20 object-contain" />
+      </div>
+
+      <div class="min-w-[240px] h-32 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center">
+        <img src="images/shoppers.png" alt="Pharmacy Logo" class="h-20 object-contain" />
+      </div>
+    </div>
+    <div class="text-center px-8 mt-12">
           <button
             class="bg-black text-white px-8 py-3 !rounded-button hover:bg-gray-800 transition-colors font-medium whitespace-nowrap"
           >
-            Become a Partner Pharmacy
+            <a href="#contact">Become a Partner Pharmacy</a>
           </button>
         </div>
-      </div>
-    </section>
-    <!-- Technology & Growth Services -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Technology and Marketing Support for Pharmacies
-          </h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-            In addition to delivery, Luca Med Solutions helps pharmacy partners
-            grow with reliable digital solutions.
-          </p>
+  </div>
+</section>
+<!-- Technology & Growth Services -->
+<section id="other-services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+        Technology and Marketing Support for Pharmacies
+      </h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+        Beyond delivery, we help pharmacies grow with modern digital solutions.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Website -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+        <div class="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <i class="ri-global-line text-black text-2xl"></i>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-global-line text-black text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Pharmacy Website Creation
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Professional website design and development for pharmacy
-              businesses.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-rocket-line text-gray-700 text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Website Upgrades & Performance
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Enhance existing websites with improved functionality and speed.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-search-line text-black text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              SEO Optimization
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Improve local pharmacy visibility in search results.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-megaphone-line text-gray-700 text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Digital Marketing & Lead Generation
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Attract new customers through targeted digital marketing
-              campaigns.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-calendar-check-line text-black text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Online Appointment Integration
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Streamline patient scheduling with online booking systems.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div
-              class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="ri-phone-line text-gray-700 text-xl"></i>
-            </div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">
-              Contact & Communication Tools
-            </h3>
-            <p class="text-gray-600 text-sm">
-              Improve patient communication with integrated contact solutions.
-            </p>
-          </div>
-        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Pharmacy Website Solutions
+        </h3>
+        <p class="text-gray-600 text-sm">
+          Professional pharmacy websites designed for trust, performance, and patient engagement.
+        </p>
       </div>
-    </section>
+
+      <!-- Marketing -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+        <div class="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <i class="ri-megaphone-line text-black text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Digital Marketing & Local SEO
+        </h3>
+        <p class="text-gray-600 text-sm">
+          Increase local visibility and attract more patients with targeted digital marketing.
+        </p>
+      </div>
+
+      <!-- Custom / Booking -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+        <div class="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <i class="ri-calendar-check-line text-black text-2xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Custom Integrations & Online Booking
+        </h3>
+        <p class="text-gray-600 text-sm">
+          Custom solutions including online booking, refill requests, and system integrations.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Contact Us / Sign-Up Section -->
     <section id="contact" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -825,6 +779,7 @@
                   rows="4"
                   class="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm placeholder-gray-400"
                   placeholder="Tell us about your specific needs or ask any questions"
+                  name="message"
                 ></textarea>
               </div>
               <div class="text-center pt-4">
@@ -835,7 +790,7 @@
                   Submit & Get Started
                 </button>
               </div>
-			  <div
+			      <div
                 id="signupMessage"
                 class="text-sm mt-3"
               ></div>
@@ -857,8 +812,7 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
-                  <p class="text-gray-600">1-800-LUCA-MED</p>
-                  <p class="text-gray-600">(1-800-582-2633)</p>
+                  <p class="text-gray-600"><a href="tel:+14164351596">+1(416) 435-1596</a></p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -869,8 +823,8 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                  <p class="text-gray-600">info@lucamedsolutions.ca</p>
-                  <p class="text-gray-600">partnerships@lucamedsolutions.ca</p>
+                  <p class="text-gray-600"><a href="mailto:info@lucamed.ca">info@lucamed.ca</a></p>
+                  <p class="text-gray-600"><a href="mailto:lucamedsolutions@gmail.com">lucamedsolutions@gmail.com</a></p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -880,9 +834,8 @@
                   <i class="ri-map-pin-line text-white text-lg"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-gray-900 mb-1">Office</h4>
-                  <p class="text-gray-600">123 Medical Drive</p>
-                  <p class="text-gray-600">Toronto, ON M5V 3A8</p>
+                  <h4 class="font-semibold text-gray-900 mb-1">Service Area</h4>
+                  <p class="text-gray-600">Serving pharmacies across the GTA</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -921,18 +874,17 @@
         <div class="grid md:grid-cols-4 gap-8">
           <div class="col-span-2">
             <div class="flex items-center mb-4">
-              <span class="text-2xl font-['Pacifico'] text-primary"
-                >Luca Med Solutions</span
+              <span class="text-2xl font-extrabold tracking-wide text-white">Luca Med Solutions</span
               >
             </div>
             <p class="text-gray-400 mb-6 max-w-md">
               Reliable, compliant medical delivery services for pharmacies
-              across Canada. Focus on patient care while we handle the
+              across Canada. Pharmacies focus on patient care while we handle the
               logistics.
             </p>
             <div class="space-y-2 text-sm text-gray-400">
-              <p>Email: info@lucamedsolutions.ca</p>
-              <p>Phone: 1-800-LUCA-MED</p>
+              <p>Email: <a href="mailto:info@lucamed.ca">info@lucamed.ca</a></p>
+              <p>Phone:  <a href="tel:+1(416) 435-1596">+1(416) 435-1596</a></p>
             </div>
           </div>
           <div>
@@ -945,17 +897,22 @@
               </li>
               <li>
                 <a href="#" class="hover:text-white transition-colors"
-                  >Cold-Chain Transport</a
+                  >Same-Day and Scheduled Deliveries</a
                 >
               </li>
               <li>
                 <a href="#" class="hover:text-white transition-colors"
-                  >Recurring Schedules</a
+                  >Cold-Chain Medication Transport</a
                 >
               </li>
               <li>
                 <a href="#" class="hover:text-white transition-colors"
-                  >Same-Day Delivery</a
+                  >Pharmacy Website Solutions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >SEO & Digital Marketing</a
                 >
               </li>
             </ul>
@@ -964,23 +921,23 @@
             <h3 class="text-lg font-semibold mb-4">Company</h3>
             <ul class="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" class="hover:text-white transition-colors"
+                <a href="#about" class="hover:text-white transition-colors"
                   >About Us</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Compliance</a
+                <a href="#partners" class="hover:text-white transition-colors"
+                  >Partners</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Privacy Policy</a
+                <a href="#why-us" class="hover:text-white transition-colors"
+                  >Why us</a
                 >
               </li>
               <li>
-                <a href="#" class="hover:text-white transition-colors"
-                  >Terms & Conditions</a
+                <a href="#other-services" class="hover:text-white transition-colors"
+                  >Tech Services</a
                 >
               </li>
             </ul>
@@ -993,7 +950,7 @@
               Certified.
             </p>
             <div class="flex space-x-4 mt-4 md:mt-0">
-              <a
+              <!-- <a
                 href="#"
                 class="text-gray-400 hover:text-white transition-colors"
               >
@@ -1016,12 +973,48 @@
                 <div class="w-6 h-6 flex items-center justify-center">
                   <i class="ri-facebook-fill"></i>
                 </div>
-              </a>
+              </a> -->
+              <p class="text-sm text-gray-400">
+              Designed and maintained by <a target="_blank" href="https://techgram.ca">Techgram</a>
+            </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
+    <!-- Price Modal -->
+<div id="priceModal" class="fixed inset-0 bg-black/60 hidden z-50 flex items-center justify-center">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative">
+    <button id="closePriceModal" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+      <i class="ri-close-line text-xl"></i>
+    </button>
+
+    <h3 class="text-2xl font-bold text-black mb-4 text-center">
+      Delivery Pricing
+    </h3>
+
+    <div class="space-y-3 text-gray-700">
+      <div class="flex justify-between border-b pb-2">
+        <span>Same City Delivery</span>
+        <span class="font-semibold">$4.50 CAD</span>
+      </div>
+      <div class="flex justify-between border-b pb-2">
+        <span>Anywhere in GTA</span>
+        <span class="font-semibold">$6.75 CAD</span>
+      </div>
+    </div>
+    <div class="mt-4 p-3 bg-gray-50 rounded-lg text-sm text-gray-600 text-center">
+      More detailed pricing information has been sent to your email. Please check your inbox.
+    </div>
+
+    <button
+      id="goToSignup"
+      class="mt-6 w-full bg-black text-white py-3 !rounded-button hover:bg-gray-800 transition-colors font-medium"
+    >
+      Sign Up
+    </button>
+  </div>
+</div>
     <script id="checkbox-functionality">
       document.addEventListener("DOMContentLoaded", function () {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
