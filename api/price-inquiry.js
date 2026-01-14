@@ -34,26 +34,112 @@ export default async function handler(req, res) {
   }
   // Send introductory pricing email
   try {
+    const pdfBuffer = fs.readFileSync("../documents/pricing.pdf");
     await resend.emails.send({
       from: `${process.env.FROM_EMAIL}`,
       to: [email],
-      subject: "Introductory Delivery Pricing – Luca Med Solutions",
+      attachments: [
+        {
+          filename: "pricing.pdf",
+          content: pdfBuffer,
+        },
+      ],
+      subject: "Delivery Pricing – Luca Med Solutions",
       html: `
-        <p>Thank you for contacting <strong>Luca Med Solutions</strong>.</p>
+        <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Luca Med Solutions – Pricing</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#ffffff; font-family: Arial, Helvetica, sans-serif; color:#000000;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#ffffff;">
+      <tr>
+        <td align="center" style="padding: 30px 15px;">
+          <table width="600" cellpadding="0" cellspacing="0" style="border:1px solid #000000;">
+            
+            <!-- Header -->
+            <tr>
+              <td style="padding:20px; text-align:center; border-bottom:1px solid #000000;">
+                <h1 style="margin:0; font-size:22px; font-weight:bold;">
+                  Luca Med Solutions
+                </h1>
+              </td>
+            </tr>
 
-        <p>We are currently offering <strong>introductory delivery rates</strong> for pharmacies:</p>
+            <!-- Content -->
+            <tr>
+              <td style="padding:25px; font-size:14px; line-height:1.6;">
+                <p>Thank you for contacting <strong>Luca Med Solutions</strong>.</p>
 
-        <ul>
-          <li><strong>$4.50</strong> for deliveries in same city</li>
-          <li><strong>$6.75</strong> for deliveries to anywhere in GTA</li>
-        </ul>
+                <p>
+                  We are currently offering <strong>introductory delivery rates</strong> for pharmacies:
+                </p>
 
-        <p>Our deliveries are PHIPA-compliant, secure, and handled by trained drivers.</p>
+                <ul style="padding-left:20px;">
+                  <li><strong>$4.50</strong> for deliveries in the same city</li>
+                  <li><strong>$6.75</strong> for deliveries anywhere in the GTA</li>
+                </ul>
 
-        <p>Reply to this email if you’d like to get started or have questions.</p>
+                <p>
+                  Our deliveries are <strong>PHIPA-compliant</strong>, secure, and handled by trained drivers.
+                </p>
 
-        <br />
-        <p>— Luca Med Solutions</p>
+                <p>
+                  Detailed information can be found in the <strong>attached PDF file</strong>.
+                </p>
+
+                <p>
+                  Reply to this email if you’d like to get started or have any questions.
+                </p>
+
+                <p style="margin-top:30px;">
+                  —<br />
+                  <strong>Luca Med Solutions</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- Sign Up Button -->
+            <tr>
+              <td align="center" style="padding:25px; border-top:1px solid #000000;">
+                <a
+                  href="https://www.lucamed.ca/#contact" target="_blank" rel="noopener noreferrer"
+                  style="
+                    display:inline-block;
+                    padding:12px 28px;
+                    border:2px solid #000000;
+                    color:#000000;
+                    text-decoration:none;
+                    font-weight:bold;
+                    font-size:14px;
+                  "
+                >
+                  Sign Up
+                </a>
+              </td>
+            </tr>
+
+            <!-- Footer / Unsubscribe -->
+            <tr>
+              <td style="padding:15px; text-align:center; font-size:12px; border-top:1px solid #000000;">
+                <p style="margin:0;">
+                  If you no longer wish to receive promotional emails, you may
+                  <a
+                    href="mailto:info@lucamed.ca?subject=Unsubscribe&body=I%20want%20to%20unsubscribe%20from%20promotional%20emails."
+                    style="color:#000000; text-decoration:underline;"
+                  >
+                    unsubscribe here
+                  </a>.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
       `
     });
   } catch (emailError) {
