@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import fs from "fs";
+import path from "path";
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -35,7 +36,13 @@ export default async function handler(req, res) {
   }
   // Send introductory pricing email
   try {
-    const pdfBuffer = fs.readFileSync("../documents/pricing.pdf");
+    const pdfPath = path.join(
+      process.cwd(),
+      "public",
+      "documents",
+      "pricing.pdf"
+    );
+    const pdfBuffer = fs.readFileSync(pdfPath);
     await resend.emails.send({
       from: `${process.env.FROM_EMAIL}`,
       to: [email],
