@@ -126,22 +126,6 @@ export default async function handler(req, res) {
                 </a>
               </td>
             </tr>
-
-            <!-- Footer / Unsubscribe -->
-            <tr>
-              <td style="padding:15px; text-align:center; font-size:12px; border-top:1px solid #000000;">
-                <p style="margin:0;">
-                  If you no longer wish to receive promotional emails, you may
-                  <a
-                    href="mailto:info@lucamed.ca?subject=Unsubscribe&body=I%20want%20to%20unsubscribe%20from%20promotional%20emails."
-                    style="color:#000000; text-decoration:underline;"
-                  >
-                    unsubscribe here
-                  </a>.
-                </p>
-              </td>
-            </tr>
-
           </table>
         </td>
       </tr>
