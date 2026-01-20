@@ -46,6 +46,49 @@ export default async function handler(req, res) {
         <p>— Luca Med Solutions</p>
       `
     });
+
+    await resend.emails.send({
+      from: process.env.FROM_EMAIL,
+      to: [process.env.LUCAMED_EMAIL],
+      subject: "Sign Up Enquiry – Luca Med Solutions",
+      html: `
+        <table cellpadding="8" cellspacing="0" style="border-collapse:collapse; border:1px solid #000000; font-family:Arial, Helvetica, sans-serif;">
+        <th>
+          <td style="border:1px solid #000000;"><strong>Field Name</strong></td>
+          <td style="border:1px solid #000000;">Value</td>
+        </th>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Pharmacy Name</strong></td>
+          <td style="border:1px solid #000000;">${pharmacy_name}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Contact Person</strong></td>
+          <td style="border:1px solid #000000;">${contact_name}</td>
+        </tr>
+         <tr>
+          <td style="border:1px solid #000000;"><strong>Email</strong></td>
+          <td style="border:1px solid #000000;">${email}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Address</strong></td>
+          <td style="border:1px solid #000000;">${address}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Phone</strong></td>
+          <td style="border:1px solid #000000;">${phone}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Service Requested</strong></td>
+          <td style="border:1px solid #000000;">${services}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Message</strong></td>
+          <td style="border:1px solid #000000;">${message}</td>
+        </tr>
+      </table>
+      `
+    });
+
   } catch (e) {
     console.error("Email failed", e);
   }

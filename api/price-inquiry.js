@@ -126,22 +126,6 @@ export default async function handler(req, res) {
                 </a>
               </td>
             </tr>
-
-            <!-- Footer / Unsubscribe -->
-            <tr>
-              <td style="padding:15px; text-align:center; font-size:12px; border-top:1px solid #000000;">
-                <p style="margin:0;">
-                  If you no longer wish to receive promotional emails, you may
-                  <a
-                    href="mailto:info@lucamed.ca?subject=Unsubscribe&body=I%20want%20to%20unsubscribe%20from%20promotional%20emails."
-                    style="color:#000000; text-decoration:underline;"
-                  >
-                    unsubscribe here
-                  </a>.
-                </p>
-              </td>
-            </tr>
-
           </table>
         </td>
       </tr>
@@ -150,6 +134,34 @@ export default async function handler(req, res) {
 </html>
       `
     });
+        
+    await resend.emails.send({
+      from: `${process.env.FROM_EMAIL}`,
+      to: [`${process.env.LUCAMED_EMAIL}`],
+      subject: "New Enquiry – Get Price",
+      html: `
+        <table cellpadding="8" cellspacing="0" style="border-collapse:collapse; border:1px solid #000000; font-family:Arial, Helvetica, sans-serif;">
+        <th>
+          <td style="border:1px solid #000000;"><strong>Field Name</strong></td>
+          <td style="border:1px solid #000000;">Value</td>
+        </th>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>Email</strong></td>
+          <td style="border:1px solid #000000;">${email}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>From Address</strong></td>
+          <td style="border:1px solid #000000;">${from}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;"><strong>To Address</strong></td>
+          <td style="border:1px solid #000000;">${to}</td>
+        </tr>
+      </table>
+      `
+    });
+
+
   } catch (emailError) {
     // Email failure should not block submission
     console.error("Email failed:", emailError);
