@@ -53,10 +53,10 @@ export default async function handler(req, res) {
       subject: "Sign Up Enquiry – Luca Med Solutions",
       html: `
         <table cellpadding="8" cellspacing="0" style="border-collapse:collapse; border:1px solid #000000; font-family:Arial, Helvetica, sans-serif;">
-        <th>
-          <td style="border:1px solid #000000;"><strong>Field Name</strong></td>
-          <td style="border:1px solid #000000;">Value</td>
-        </th>
+        <tr>
+          <th style="border:1px solid #000000;"><strong>Field Name</strong></th>
+          <th style="border:1px solid #000000;">Value</th>
+        </tr>
         <tr>
           <td style="border:1px solid #000000;"><strong>Pharmacy Name</strong></td>
           <td style="border:1px solid #000000;">${pharmacy_name}</td>
